@@ -76,31 +76,12 @@ Forsaken Dungeon은 전투·AI·스탯·장비·UI 등 액션 RPG의 핵심 시�
 
 ## 📁 **프로젝트 구조**
 
-Source/
-├─ Character/
-│ ├─ EchoPlayer.cpp/h
-│ └─ EnemyBase.cpp/h
-│
-├─ AI/
-│ ├─ BTService_FindTarget
-│ ├─ BTTask_PerformAttack
-│ ├─ BTTask_BossMeleeAttack
-│ ├─ BTTask_BossRangeAttack
-│ └─ BTDecorator_CanAttack
-│
-├─ Items/
-│ ├─ ItemDefinition
-│ ├─ ItemInstance
-│ ├─ InventoryRootWidget
-│ ├─ ItemGridWidget
-│ ├─ EquipmentComponent
-│ └─ Tooltip
-│
-├─ World/
-│ ├─ PortalActor
-│ ├─ DoorActor
-│ └─ LootChestActor
-│
-└─ UI/
-├─ MainMenuWidget
-└─ HUD, Stat Widgets
+| 구분                    | 내용                                                                                                             |
+| --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Character**         | 플레이어 캐릭터 기반 클래스 및 컨트롤러<br>EchoPlayer.cpp/h, 상태 제어, 이동·전투 입력 처리                                                 |
+| **AI**                | 적 캐릭터 베이스 및 AI 관련 로직<br>EnemyBase.cpp/h, BTService_FindTarget, BTTask_Attack·BossAttack, BTDecorator_CanAttack |
+| **Combat**            | 공격/피격 판정 및 전투 흐름<br>Weapon Overlap, Damage 처리, Montage & Notify 기반 타이밍 제어                                      |
+| **Items / Inventory** | 아이템 정의·인스턴스·장비 시스템<br>ItemDefinition, ItemInstance, EquipmentComponent, Tooltip, 인벤토리 UI/슬롯 구성                 |
+| **UI**                | 전체 UI·HUD·메뉴·인벤토리/상호작용 UI<br>InventoryRootWidget, ItemGridWidget, MainMenuWidget, HUD, Stat Widgets            |
+| **World**             | 맵 상호작용·던전 흐름 관련 오브젝트<br>PortalActor, DoorActor, LootChestActor, 상호작용 시스템(Interact Interface 기반)                |
+
